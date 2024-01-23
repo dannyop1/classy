@@ -1,0 +1,380 @@
+/*
+Consists Styling of
+  => NavBar
+  => SideBar
+
+/* *******************************************NavBar Styling Starts********************************************************* */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+#__react-alert__ div div div {
+  width: auto !important;
+}
+
+/* ::-webkit-file-upload-button {
+  display: none;
+} */
+
+.image-component {
+  display: flex;
+}
+
+.display-image {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  right: 20%;
+  bottom: 20%;
+}
+
+body {
+  background-color: #f1f2f7 !important;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.navigation {
+  position: sticky;
+  top: 0;
+  left: 15.25rem;
+  width: calc(100vw - 15.25rem);
+  margin-left: 15.25rem;
+  z-index: 1000;
+  transition: margin-left 0.5s, width 0.5s;
+}
+
+.navigation.close {
+  margin-left: 0;
+  width: 100%;
+  transition: margin-left 0.5s, width 0.5s;
+}
+
+.navigation .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+}
+
+/* /* Left section of Navbar styling */
+.navigation .navbar .left-section {
+  display: flex;
+  justify-content: space-between;
+  width: 13rem;
+  align-items: center;
+}
+
+.navigation .navbar .backbtn {
+  border: 2px solid #17a2b8;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.navigation .navbar .backbtn:hover,
+.navigation .navbar .backbtn.active {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.navigation .navbar .middle-section {
+  align-self: center;
+  font: bold 26px "RobotoBold", sans-serif;
+}
+
+.navigation .navbar .right-section {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  /* width: 100%;
+  max-width: 14rem; */
+  align-items: center;
+}
+
+.navigation .navbar .right-section .not-image {
+  display: grid;
+  grid-template-columns: repeat(2, 0.8fr);
+  align-items: center;
+}
+
+.navigation .navbar .right-section .profile-image {
+  width: 40px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.user-name {
+  display: flex;
+  font: bold 16px "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.navigation .navbar .notification__icon,
+.navigation .navbar .arrow {
+  font-size: 25px;
+  cursor: pointer;
+  /* color: #b0c3cc; */
+}
+
+.navigation .navbar .notification__symbol {
+  width: 10px;
+  height: 10px;
+  background-color: #ec5252;
+  border-radius: 50%;
+  position: relative;
+  left: 15px;
+  top: 7px;
+}
+
+.navigation .menu {
+  position: absolute;
+  right: 2%;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 9rem;
+}
+
+.menu.notification {
+  right: 13%;
+  max-height: 20rem;
+  width: 20rem;
+  overflow: auto;
+}
+
+.menu.notification .heading {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #a8bbbf;
+  padding: 10px;
+}
+
+.menu.notification .section {
+  display: grid;
+  grid-template-columns: 20px 1fr 40px;
+  gap: 5px;
+  border-bottom: 1px solid #c5c6ca;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.menu.notification .body-section:hover {
+  background-color: #273240;
+}
+
+.menu.notification .body-section:hover .message {
+  color: white;
+}
+
+.menu.notification .body-section:hover .createdBy {
+  color: #a8bbbf;
+}
+
+.menu.notification .section .catagory {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2172f2;
+  margin: 15px 0;
+}
+
+.section .breadcrumb {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.section .photo img {
+  max-width: 40px;
+  max-height: 50px;
+  border-radius: 6px;
+}
+
+.section .photo {
+  align-self: center;
+}
+
+.menu.notification .message {
+  padding: 10px 0;
+}
+
+.menu.notification .message_text {
+  font: bold 13px "Poppins";
+  padding-bottom: 5px;
+}
+
+.menu.notification .createdBy {
+  display: flex;
+  font: bold 11.5px "Open Sans";
+  color: #6c6c6c;
+}
+
+.navigation .menu.inactive {
+  visibility: hidden;
+  transition: visibility 0.1s;
+}
+
+.navigation .menu.active {
+  visibility: visible;
+  transition: visibility 0.5s;
+}
+
+.profile-options li {
+  list-style-type: none;
+  padding: 8px 0 !important;
+  font: normal 15px "Poppins", sans-serif;
+}
+
+.navigation .menu .menu-icon {
+  vertical-align: middle;
+  font-size: 18px;
+  margin-right: 10px;
+  color: #a6abc8;
+}
+
+.navigation .menu .menu-link {
+  text-decoration: none;
+  color: #273240;
+  cursor: pointer;
+}
+
+/* *******************************************NavBar Styling Ends************************* */
+
+/* *******************************************SideBar Styling Starts************************* */
+/* SideBar Content CSS Code Start*/
+
+/* Sidemenu STyling */
+
+.visible-sidemenu {
+  position: fixed;
+  /* top: 66px; */
+  background-color: #f8f9fc;
+  width: 15.25rem;
+  height: 100vh;
+  left: -15.5rem;
+  transition: all 0.5s;
+  overflow-y: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+  z-index: 1001;
+}
+
+.visible-sidemenu .title {
+  font: normal 25px "PoppinsBold", sans-serif;
+  letter-spacing: 0.5px;
+  /* color: #5a67ba; */
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px 0;
+  text-align: center;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.sidemenu {
+  padding: 20px 30px;
+}
+
+.sidemenu li {
+  list-style-type: none;
+  padding: 8px 0;
+  font: normal 16px "Poppins", sans-serif;
+}
+
+/* Custom ScrollBar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+/* Custom Scrollbar End*/
+
+.visible-sidemenu.active {
+  left: 0;
+}
+
+.submenu-parents {
+  cursor: pointer;
+}
+
+/* Submenu of SIdebar STyling */
+.sidemenu .submenu {
+  padding-left: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  margin: 10px 0;
+  border-left: 2px solid #5a6acf;
+}
+
+.sidemenu .submenu.collapse {
+  margin: 0;
+}
+
+.submenu.active {
+  max-height: 200px;
+  transition: max-height 1s ease-in-out;
+}
+
+/* Submenu styling end  */
+
+.sidemenu .active-link {
+  color: #5a6acf;
+  border-radius: 5px;
+}
+
+.sidemenu .linktext {
+  text-decoration: none;
+}
+
+.btn-active {
+  color: #f1f2f7;
+  background-color: #5a6acf;
+}
+
+.sidemenu .active-sublink {
+  background-color: rgba(112, 127, 221, 0.1);
+  padding: 5px;
+}
+
+.sidemenu .inactive-link {
+  color: black;
+}
+
+.sidemenu .submenuitems {
+  display: grid;
+  grid-template-columns: 2rem auto 0.9rem;
+  line-height: 20px;
+}
+
+.sidemenu .submenuitems .icon,
+.submenuitems .submenuicon {
+  line-height: 24px;
+}
+
+/* SideBar Content CSS Code End*/
+
+/* *******************************************SideBar Styling Ends********************************************************* */
