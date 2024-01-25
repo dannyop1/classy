@@ -15,6 +15,13 @@ Consists Styling of
   width: auto !important;
 }
 
+:root {
+  /* Color */
+  /* Primary */
+  --primary-color: #5D9C59;
+  --secondary-color: #DDF7E3;
+ }
+
 /* ::-webkit-file-upload-button {
   display: none;
 } */

@@ -22,6 +22,7 @@ import "./components/common/css/PasswordToggle.css";
 import { getUser } from "./redux/actions/authactions";
 import ForgetPassword from "./ForgetPassword";
 import SetPassword from "./SetPassword";
+import Landing from "./LandingPage";
 
 //Alert options
 const alertOptions = {
@@ -44,6 +45,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/*" element={<PrivateRoute navigate="/login" />} />
           <Route path={"/login"} element={<Login />} />
+          <Route path={"/landing"} element={<Landing />} />
           <Route path={"/logout"} element={<Logout />} />
           {/* <Route path={"/register/admin/"} element={<Register />} /> */}
           <Route path={"/forgetpassword"} element={<ForgetPassword />} />

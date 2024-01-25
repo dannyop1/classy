@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import refImage from "./assets/images/refImage.png";
+import Lock from "./assets/logo/lock.png";
+import Logo from "./assets/logo/Image_Logo.png";
+import Vector from "./assets/logo/Vector.png";
 import { useForm } from "react-hook-form";
 import "./Password.css";
 import { returnErrors, returnSuccess } from "./redux/actions/alertactions";
 import { useDispatch } from "react-redux";
 import axiosInstance from "./axios";
+import { UserOutlined } from '@ant-design/icons';
+import { Input } from 'antd'
+
+import { Link, Navigate } from "react-router-dom";
 
 function ForgetPassword() {
   const { handleSubmit, register } = useForm();
@@ -28,14 +34,20 @@ function ForgetPassword() {
   return (
     <React.Fragment>
       <div className="row">
+        <img className="fixed-image-left" src={Vector} alt="Vector" />
+        <img className="fixed-image-top" src={Vector} alt="Vector" />
+        <img className="fixed-image-right" src={Vector} alt="Vector" />
+        <div id="logo">
+          <img src={Logo} alt="Logo" />
+        </div>
         <div className="horizontal-container">
           <div className="progress-bar-container">
             <div className="horizontal-form-box">
               <div className="horizontal-info-container">
-                <img src={refImage} alt="set-password" />
-                <p className="horizontal-heading">Forget Your Password?</p>
+                <img src={Lock} alt="Lock" />
+                <p className="horizontal-heading">Forgot Password?</p>
                 <p className="horizontal-subtitle">
-                  Just provide your email and we can do the rest.
+                  Just provide email and we can do the rest.
                 </p>
               </div>
               <form
@@ -49,23 +61,29 @@ function ForgetPassword() {
                   </div>
                 )}
                 <div className="o3-form-group">
-                  <label htmlFor="new_password">Email</label>
-                  <div className="custom_pass">
-                    <input
-                      className="input"
-                      type="email"
-                      name="email"
-                      required
-                      {...register("email")}
-                    />
-                  </div>
+
+                  <Input size="large"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                    prefix={<UserOutlined />}
+                    {...register("email")}
+                    required
+                    variant="filled" />
                 </div>
 
-                <button className="btn-custom btn-primary">Send Email</button>
+                <button className="send__btn">Send Email</button>
+              <div className="back-login">
+              Have an account? {" "}
+                <Link to="/login" className="links">
+                  Login
+              </Link>
+              </div>
               </form>
             </div>
           </div>
         </div>
+
       </div>
     </React.Fragment>
   );

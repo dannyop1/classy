@@ -58,14 +58,14 @@ function UserProfile({ image }) {
         setUploadedImage={setUploadedImage}
         previousImage={previousImage}
       />
-      <InnerHeader icon={<MdIcons.MdPersonAdd />} name={"UserProfile"} />
+      <InnerHeader icon={<MdIcons.MdPersonAdd />} name={"User Profile"} />
       <div className="main-content">
         <div className="card-section">
           <div className="heading">
             <span className="title-icon">
               <MdIcons.MdPerson />
             </span>
-            <span className="title">Your Information</span>
+            <span className="title">Account Information</span>
           </div>
           <div className="content-section">
             <div className="mid-content">
@@ -88,6 +88,7 @@ function UserProfile({ image }) {
                       Change Photo
                     </p>
                   </div>
+                  <p  style={{ fontSize: 14 }}>* Click to change your photo</p>
                 </div>
 
                 <div className="information">
@@ -127,7 +128,7 @@ function UserProfile({ image }) {
           </div>
           <div className="content-section">
             <div className="allinputfield">
-              <ViewModal title={"TRN"} value={teacher.TRN} />
+              <ViewModal title={"ID"} value={teacher.TRN} />
               <ViewModal title={"FIRST NAME"} value={teacher.first_name} />
               <ViewModal
                 title={"MIDDLE NAME"}

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./Login.css";
 import Logo from "../assets/logo/Image_Logo.png";
-import CampusLogo from "../assets/logo/campusLogo.png";
+import Vector from "../assets/logo/Vector.png";
+
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/actions/authactions";
 import { Link, Navigate } from "react-router-dom";
 import * as FiIcons from "react-icons/fi";
+import { UserOutlined } from '@ant-design/icons';
+import { LockFilled } from '@ant-design/icons';
+import { Input } from 'antd'
 
 function Login() {
   const auth = useSelector((state) => state.auth);
@@ -39,52 +43,44 @@ function Login() {
   }
   return (
     <div className="main">
+      <img className="fixed-image-left" src={Vector} alt="Vector" />
+      <img className="fixed-image-top" src={Vector} alt="Vector" />
+      <img className="fixed-image-right" src={Vector} alt="Vector" />
       <div id="logo">
         <img src={Logo} alt="Logo" />
       </div>
       <div id="forms">
         <div className="image-container">
-          <img src={CampusLogo} alt="Logo" className="campus-logo" />
+          <p id="welcome-info">Welcome</p>
+
+          <p id="login-message">We are glad to see you back</p>
         </div>
         <div className="form_input">
-          <div className="information">
-            <p id="welcome-info">Welcome!</p>
-            <p id="login-message">Login to your account</p>
-          </div>
+
           <form>
-            <div className="input-field">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="example@example.com"
-                onChange={handleChange}
-              />
-            </div>
+            <Input size="large"
+              name="email"
+              id="email"
+              placeholder="Email"
+              prefix={<UserOutlined />}
+              onChange={handleChange}
+              variant="filled" />
+
 
             <div className="input-field password">
-              <label>Password</label>
               <div className="input-icon-container">
-                <input
-                  type={passwordShown ? "text" : "password"}
+                <Input.Password
                   name="password"
+                  size="large"
                   id="password"
-                  placeholder="Enter password"
+                  placeholder="Password"
+                  prefix={<LockFilled />}
                   onChange={handleChange}
-                />
-                <button
-                  className="fa eye-button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setPasswordShow(!passwordShown);
-                  }}>
-                  {!passwordShown ? <FiIcons.FiEye /> : <FiIcons.FiEyeOff />}
-                </button>
+                  variant="filled" />
               </div>
             </div>
-            <div className="section">
-            <Link to="/forgetpassword" className="links">
+            <div className="sections">
+              <Link to="/forgetpassword" className="links">
                 Forget Password?
               </Link>
             </div>
@@ -102,6 +98,7 @@ function Login() {
           </form>
         </div>
       </div>
+
     </div>
   );
 }

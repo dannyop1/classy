@@ -1,3 +1,4 @@
+@import '../index.css';
 @font-face {
   font-family: Roboto;
   src: url(../assets/fonts/Roboto/Roboto-Regular.ttf);
@@ -28,29 +29,38 @@
   src: url(../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf);
 }
 
+@font-face {
+  font-family: SmoochSans;
+  src: url(../assets/fonts/SmoochSans/SmoochSans-Bold.ttf);
+}
+
 /* Main Container */
 .main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 100vh;
   margin: auto;
+  background-color: white;
+  padding: 0 10rem;
+  position: relative;
 }
 
 #logo img {
-  width: 27rem;
-  height: 26rem;
+  width: 32rem;
+  height: 34rem;
   position: relative;
   /* left: 35px; */
 }
 
 #forms {
   background: #ffffff;
-  height: 37rem;
-  width: 30rem;
+  width: 26rem;
+  border: 1px rgba(0, 0, 0, 0.385) solid;  
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.219);
 
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
+  
 }
 
 #forms img {
@@ -58,7 +68,7 @@
 }
 
 #forms .form_input {
-  padding-left: 2.5rem;
+  padding: 2.5rem;
 }
 
 .information {
@@ -66,14 +76,16 @@
   font-family: "Roboto", sans-serif;
 }
 
-.information #welcome-info {
-  font-size: 12px;
-  margin-bottom: 3px;
+#welcome-info {
+  font-size: 100px;
+  font-family: "SmoochSans", sans-serif;
+  text-align: center;
 }
 
-.information #login-message {
-  font-size: 18px;
-  font-weight: bold;
+ #login-message {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 /* Input Fields */
@@ -88,23 +100,22 @@
   margin-bottom: 0.75rem;
 }
 
-.input-field input {
-  border: 1px solid #e8e8e8;
-  box-sizing: border-box;
-  border-radius: 5px;
-  height: 2.5rem;
-  width: 90%;
-  padding-left: 12px;
-  font-size: 14px;
-}
-
-.input-field input::placeholder {
+/* .input-field input::placeholder {
   font-size: 13px;
   color: #989292;
   font-family: "Poppins", sans-serif;
+} */
+/* #password {
+  background-color: #F2F2F2;
+    border: none;
 }
+#email {
+  background-color: #F2F2F2;
+  border: none;
+} */
+/* 
 
-.password input::placeholder {
+.email input::placeholder {
   margin-top: 2px;
 }
 
@@ -113,14 +124,14 @@
   right: 1.5rem;
   font-size: 0.8rem;
   cursor: pointer;
-}
+} */
 
-.section {
+.sections {
   display: flex;
-  justify-content: space-between;
-  margin-right: 3rem;
+  justify-content: center;
+  /* margin-right: 3rem; */
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .section__remember input {
@@ -135,34 +146,59 @@
 
 .links {
   text-decoration: none;
-  color: #6358dc;
+  color: var(--primary-color);
 }
 
 .links:hover {
-  color: #4d44ad;
+  color: var(--primary-color);
 }
 
 .login__btn {
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
   padding: 10px 0;
   font-size: 16px;
   font-family: Poppins;
+  font-weight: bold;
   color: white;
-  background-color: #6358dc;
+  background-color:#000000;
   cursor: pointer;
   border: none;
+  border-radius: 10px;
 }
 
 .login__btn:hover {
-  background-color: #4d44ad;
+  background-color: var(--primary-color);
 }
 
 .account {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 16px;
 }
+
+.fixed-image-left {
+  position: fixed;
+  top: 54%;
+  left: -45px;
+  z-index: 1;
+  width: 6rem;
+}
+.fixed-image-top {
+  position: fixed;
+  top: -45px;
+  left: 53%;
+  z-index: 1;
+  width: 6rem;
+}
+.fixed-image-right {
+  position: fixed;
+  bottom: -61px;
+  z-index: 1;
+  width: 8rem;
+  right: -63px;
+}
+
 
 @media screen and (max-width: 1050px) {
   #main {
@@ -184,7 +220,7 @@
   }
 
   #forms .form_input {
-    padding-left: 1.5rem;
+    padding: 1.5rem;
   }
 
   #forms img {
