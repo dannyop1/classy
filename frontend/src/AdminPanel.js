@@ -85,6 +85,10 @@ const TeacherFullDetail = React.lazy(() =>
   import("./components/adminpanel/pages/teacher/TeacherFullDetail")
 );
 
+const Statistics = React.lazy(() =>
+  import("./components/adminpanel/pages/statistics")
+);
+
 function AdminPanel() {
   const user = useSelector((state) => state.auth.user);
   const [showSideBar, setSideBar] = useState(true);
@@ -156,6 +160,12 @@ function AdminPanel() {
             <Route
               path="admin/announcements/view"
               element={<ViewAnnouncement />}
+            />
+
+            {/* Statistics  */}
+            <Route
+              path="admin/statistics"
+              element={<Statistics />}
             />
 
             {/* Classes  */}

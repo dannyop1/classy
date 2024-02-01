@@ -110,6 +110,9 @@ const menuadminValue = [
     icon: <MdIcons.MdAdminPanelSettings />,
     to: "/admin/createid",
   },
+
+ 
+
   {
     name: "Announcements",
     hasSubMenu: true,
@@ -125,6 +128,12 @@ const menuadminValue = [
     ],
     icon: <FaIcons.FaBullhorn />,
     to: "/admin/announcements/create",
+  },
+  {
+    name: "Statistics",
+    hasSubMenu: false,
+    icon: <MdIcons.MdPieChart />,
+    to: "admin/statistics",
   },
 ];
 

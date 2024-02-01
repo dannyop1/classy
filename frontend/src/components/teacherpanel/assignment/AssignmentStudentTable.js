@@ -63,23 +63,23 @@ const AssignmentStudentTable = ({ remarkClick, setRemarkClick, data }) => {
           );
         },
       },
-      // {
-      //   Header: "Remark",
-      //   SearchAble: false,
-      //   className: "col_remark",
-      //   Cell: ({ row }) => {
-      //     return (
-      //       <>
-      //         <button
-      //           className="btn-custom btn-danger"
-      //           style={{ backgroundColor: "teal" }}
-      //           onClick={() => setRemarkClick(!remarkClick)}>
-      //           Remark
-      //         </button>
-      //       </>
-      //     );
-      //   },
-      // },
+      {
+        Header: "Mark",
+        SearchAble: false,
+        className: "col_remark",
+        Cell: ({ row }) => {
+          return (
+            <>
+              <button
+                className="btn-custom btn-danger"
+                style={{ backgroundColor: "teal" }}
+                onClick={() => setRemarkClick(!remarkClick)}>
+                Remark
+              </button>
+            </>
+          );
+        },
+      },
     ],
     []
   );

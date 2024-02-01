@@ -11,6 +11,7 @@ import {
 } from "./../../../redux/actions/teacher/teacheractions";
 import Loading from "../../common/Loading";
 import moment from "moment";
+
 import AssignmentEditModal from "./AssignmentEditModal";
 import { useForm, Controller } from "react-hook-form";
 import { createMessage } from "../../../redux/actions/alertactions";
@@ -48,12 +49,14 @@ function AssignmentDetail() {
   }, []);
 
   const onSubmit = (data) => {
-    if (!data.class) {
-      dispatch(createMessage({ classRequired: "Class Field is Required" }));
-    } else if (!data.section) {
-      dispatch(createMessage({ sectionRequired: "Section Field is Required" }));
-    } else if (!data.subject) {
-      dispatch(createMessage({ classRequired: "Subject Field is Required" }));
+    // if (!data.class) {
+    //   dispatch(createMessage({ classRequired: "Class Field is Required" }));
+    // } else if (!data.section) {
+    //   dispatch(createMessage({ sectionRequired: "Section Field is Required" }));
+    // } else 
+    if (!data.subject) {
+      dispatch(createMessage({ classRequired: "Successfully" }));
+   
     } else {
       console.log(data);
       const postdata = new FormData();
@@ -118,10 +121,10 @@ function AssignmentDetail() {
           valueArray={[]}
           click={remarkClick}
           setClick={setRemarkClick}
-          heading={"Give Remarks"}
+          heading={"Grade this assigment"}
           isCustom2={true}
-          placeholder={"Write Remark"}
-          title="Remark"
+          placeholder={"Write Mark"}
+          title="Mark"
         />
       )}
       <InnerHeader icon={<MdIcons.MdUploadFile />} name={`Assignments`} />
@@ -202,15 +205,15 @@ function AssignmentDetail() {
         <div className="card-section">
           <h2 className="heading">
             Student Performance
-            <span style={{ float: "right" }}>
-              <button
+            <span style={{ display: "flex", justifyContent: "flex-end" }}>
+              <button style={{ color: submitted ? "white" : "inherit" }}
                 className={`btn-custom ${submitted ? "btn-active" : ""}`}
                 onClick={() => {
                   setSubmitted(true);
                 }}>
                 Submitted
               </button>
-              |
+                  
               <button
                 className={`btn-custom ${!submitted ? "btn-active" : ""}`}
                 onClick={() => {
