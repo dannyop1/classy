@@ -90,7 +90,7 @@ function Login() {
             <div className="account">
               <span>
                 Don't have an account?{" "}
-                <a href="mailto:classmanagementsystem2022@gmail.com" className="links">
+                <a href="mailto:claasyhethongquanlylophoc@gmail.com" className="links">
                   Contact Us
                 </a>
               </span>

@@ -1,22 +1,24 @@
-from django.core.mail import EmailMessage
-
-
-import threading
-
-
-class EmailThread(threading.Thread):
-
-    def __init__(self, email):
-        self.email = email
-        threading.Thread.__init__(self)
-
-    def run(self):
-        self.email.send()
-
+from email.message import EmailMessage
+import ssl
+import smtplib
 
 class Util:
     @staticmethod
     def send_email(data):
-        email = EmailMessage(
-            subject=data['email_subject'], body=data['email_body'], to=[data['to_email']])
-        EmailThread(email).start()
+        email_sender = 'claasyhethongquanlylophoc@gmail.com' 
+        email_password = 'tailtafxtaclsqrd'
+        email_receiver = 'classyhethongquanlylophoc@gmail.com'
+
+        em = EmailMessage()
+        em['From'] = email_sender
+        em['To'] = email_receiver
+        em['Subject'] = data['email_subject']
+        em.set_content(data['email_body'])
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
+            smtp.login(email_sender, email_password)
+            smtp.sendmail(email_sender, data['to_email'], em.as_string())
+
+

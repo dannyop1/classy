@@ -7,6 +7,7 @@ import axiosInstance from "./axios";
 import PasswordInputField from "./components/common/InputField/PasswordInputField";
 import "./Password.css";
 import { createMessage, returnErrors, returnSuccess } from "./redux/actions/alertactions";
+import Logo from "./assets/logo/Image_Logo.png";
 
 function SetPassword() {
   const { uidb64, token } = useParams();
@@ -55,7 +56,7 @@ function SetPassword() {
             <div className="progress-bar-container">
               <div className="horizontal-form-box">
                 <div className="horizontal-info-container">
-                  <img src={refImage} alt="set-password"/>
+                <img src={Logo} alt="Logo" />
                   <p className="horizontal-heading">Reset Your Password</p>
                   <p className="horizontal-subtitle">
                     Your password needs to be at least 8 characters.
