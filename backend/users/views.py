@@ -76,9 +76,9 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
             email_body = f'Dear {user.username},\n Use link below to reset your password  \n' + \
                 reset_url
             data = {'email_body': email_body, 'to_email': email,
-                    'email_subject': 'Reset your passsword'}
+                    'email_subject': 'Reset your Classy account passsword'}
             Util.send_email(data)
-            return Response({'success': 'We have sent you a link to reset your password'}, status=status.HTTP_200_OK)
+            return Response({'success': 'We have sent you a link to reset your password. ' + reset_url }, status=status.HTTP_200_OK)
         else:
             return Response({'not found': 'No such user exits with given email address'}, status=status.HTTP_404_NOT_FOUND)
 

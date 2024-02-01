@@ -26,9 +26,9 @@ function ForgetPassword() {
         dispatch(returnSuccess(res.data));
       })
       .catch((err) => {
-        dispatch(returnErrors(err.response.data, err.response.status));
+        dispatch(returnErrors(err.response.data, err.response.status)); 
       });
-    setShow(true);
+      setShow(true);
     e.target.reset();
   };
   return (
@@ -61,18 +61,19 @@ function ForgetPassword() {
                   </div>
                 )}
                 <div className="o3-form-group">
-
-                  <Input size="large"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    prefix={<UserOutlined />}
-                    {...register("email")}
-                    required
-                    variant="filled" />
+                  <label htmlFor="new_password">Email</label>
+                  <div className="custom_pass">
+                    <input
+                      className="input"
+                      type="email"
+                      name="email"
+                      required
+                      {...register("email")}
+                    />
+                  </div>
                 </div>
 
-                <button className="send__btn">Send Email</button>
+                <button className="send__btn" onClick={handleSubmit}>Send Email</button>
               <div className="back-login">
               Have an account? {" "}
                 <Link to="/login" className="links">
