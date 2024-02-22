@@ -42,6 +42,14 @@ const CreateAssignment = React.lazy(() =>
   import("./components/teacherpanel/assignment/CreateAssignment")
 );
 
+const ViewQuiz = React.lazy(() =>
+  import("./components/teacherpanel/quiz/UserDashboard.js")
+);
+
+const CreateQuiz = React.lazy(() =>
+  import("./components/teacherpanel/quiz/CreateQuiz.js")
+);
+
 const DownloadAssignment = React.lazy(() =>
   import("./components/teacherpanel/assignment/DownloadAssignment")
 );
@@ -57,6 +65,8 @@ const ViewAnnouncement = React.lazy(() =>
 const AssignmentDetail = React.lazy(() =>
   import("./components/teacherpanel/assignment/AssignmentDetail")
 );
+
+
 
 function TeacherPanel() {
   const user = useSelector((state) => state.auth.user);
@@ -116,6 +126,18 @@ function TeacherPanel() {
             <Route
               path="teacher/assignment/create"
               element={<CreateAssignment />}
+            />
+             <Route
+              path="teacher/quiz/view"
+              element={<ViewQuiz />}
+            />
+            {/* <Route
+              path="teacher/quiz/view/id=:id"
+              element={<AssignmentDetail />}
+            /> */}
+            <Route
+              path="teacher/quiz/create"
+              element={<CreateQuiz />}
             />
             <Route
               path="teacher/attendance/view"

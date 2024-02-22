@@ -161,6 +161,22 @@ const menuTeacherValue = [
     to: "/teacher/assignment/view",
   },
   {
+    name: "Multiple choice",
+    hasSubMenu: true,
+    submenus: [
+      {
+        name: "View",
+        to: "/teacher/quiz/view",
+      },
+      {
+        name: "Create",
+        to: "/teacher/quiz/create",
+      },
+    ],
+    icon: <FaIcons.FaCode />,
+    to: "/teacher/quiz/view",
+  },
+  {
     name: "Attendance",
     hasSubMenu: true,
     submenus: [
