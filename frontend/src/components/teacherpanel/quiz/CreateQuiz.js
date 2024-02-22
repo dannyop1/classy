@@ -14,7 +14,7 @@ const CreateQuiz = ({
 	isOpen,
 	editQuizHandle
 }) => {
-	const [questionArray, setQuestionArray] = useState([{ title: 'abc', optionType: 'radio', options:['a','b','c'] }])
+	const [questionArray, setQuestionArray] = useState([])
 	const [title, setTitle] = useState('')
 	const [access, setAccesss] = useState(true)
 // 	const [loading, setLoading] = useState('stop')
@@ -33,43 +33,6 @@ const navigate = useNavigate();
 			setAccesss(isOpen)
 		}
 	}, [quizTitle, questions, isOpen])
-
-// 	const createQuiz = async () => {
-// 		if (!(title.length || questionArray.length)) {
-// 			alert('Please add title and questions.')
-// 			return
-// 		} else if (!title.length) {
-// 			alert('Please add Quiz title.')
-// 			return
-// 		} else if (!questionArray.length) {
-// 			alert('Please add any questions.')
-// 			return
-// 		}
-// 		console.log('Quiz Creation Starts...')
-// 		setLoading('start')
-// 		try {
-// 			const result = await fetch('/API/quizzes/create', {
-// 				method: 'POST',
-// 				body: JSON.stringify({
-// 					title,
-// 					uid: user.uid,
-// 					questions: questionArray,
-// 					isOpen: access
-// 				}),
-// 				headers: {
-// 					'Content-Type': 'application/json'
-// 				}
-// 			})
-// 			console.log('Quiz posted ! ')
-// 			const body = await result.json()
-// 			console.log('Quiz Code : ', body.quizId)
-// 			setQuizCode(body.quizId)
-// 		} catch (e) {
-// 			console.log('Quiz creation error : ', e)
-// 			setLoading('error')
-// 		}
-// 	}
-// 	if (quizCode) return <Navigate push to={`/created-succesfully/${quizCode}`} />
 
 	return (
 		<div id='main-body'>
