@@ -108,7 +108,7 @@ function SetPassword() {
                       />
                     </div>
                   </div>
-                  <button className="btn-custom btn-primary">
+                  <button className="btn-custom-pass btn-primary">
                     Set New Password
                   </button>
                 </form>
