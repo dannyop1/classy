@@ -4,51 +4,23 @@ import CreatedQuizCard from './CreatedQuizCard'
 // import JoinedQuizCard from '../components/JoinedQuizCard'
 // import LoadingScreen from './LoadingScreen'
 import CreateQuiz from './CreateQuiz'
+import { getQuizzes } from "./axios";
 
 const UserDashboard = ({ user }) => {
-	const [createdQuizzes, setCreatedQuizzes] = useState([{
-		title:"MLN111",
-		code:1,
-		responses:3,
-		questions:25,
-		isOpen:true,
-		img: "https://tulieuvankien.dangcongsan.vn/Uploads/2019/9/6/16/loi-thoi.jpg"
-	},
-	{
-		title:"MMA301",
-		code:2,
-		responses:30,
-		questions:45,
-		isOpen:true,
-		img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDkpKI8_dTADSpTZaqLSkrfsQmuxsIo477sQ&usqp=CAU"
-	},
-	{
-		title:"EXE202",
-		code:3,
-		responses:10,
-		questions:20,
-		isOpen:false,
-		img:"https://suno.vn/blog/wp-content/uploads/2017/06/khoi-nghiep-0-dong.jpg"
-	}])
+
+
+	const [createdQuizzes, setCreatedQuizzes] = useState([])
 	const [attemptedQuizzes, setAttemptedQuizzes] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [editQuiz, setEditQuiz] = useState([])
-	// Fetch Data from the API
-	// useEffect(() => {
-	// 	if (!user.uid) {
-	// 		setLoading(false)
-	// 		return
-	// 	}
-	// 	const fetchQuizData = async () => {
-	// 		const results = await fetch(`/API/users/${user.uid}`)
-	// 		const quizData = await results.json()
-	// 		if (quizData.createdQuiz) setCreatedQuizzes(quizData.createdQuiz)
-	// 		if (quizData.attemptedQuiz) setAttemptedQuizzes(quizData.attemptedQuiz)
-	// 		setLoading(false)
-	// 	}
-	// 	if (user) fetchQuizData()
-	// }, [user])
+	console.log("createdQuizzes",createdQuizzes)
 
+	useEffect(() => {
+		getQuizzes().then((json) => {
+			setCreatedQuizzes(json);
+		});
+	  }, []);
+	
 	const editQuizHandle = async (title, questions, isOpen) => {
 		if (!title) setEditQuiz([])
 		else {
@@ -113,6 +85,7 @@ const UserDashboard = ({ user }) => {
 							setEditQuiz={setEditQuiz}
 							title={quiz.title}
 							code={quiz.code}
+							questionsNum={quiz.questionsNum}
 							responses={quiz.responses}
 							questions={quiz.questions}
 							isOpen={quiz.isOpen}

@@ -20,6 +20,7 @@ export default function quizList() {
                             index={key}
                             setEditQuiz={setEditQuiz}
                             title={quiz.title}
+                            questionsNum = {quiz.questionsNum}
                             code={quiz._id}
                             responses={quiz.responses}
                             questions={quiz.questions.length}

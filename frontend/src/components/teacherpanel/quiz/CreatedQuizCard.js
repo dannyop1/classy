@@ -12,11 +12,12 @@ const CreatedQuizCard = ({
 	isOpen,
 	index,
 	setEditQuiz,
-    img
+    img,
+	questionsNum
 }) => {
 	return (
 		<div className='quiz-card'>
-			<div style={{backgroundColor:"blue", height:"100%", backgroundImage: `url(${img})`}}>
+			<div style={{backgroundColor:"blue", height:"100%", backgroundImage: `url(${img})`, backgroundSize:"cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}>
 				{/* <h1 id='created-quiz-title'>{title}</h1>
 				<p className='card-code'>Code: {code}</p> */}
 			</div>
@@ -31,7 +32,7 @@ const CreatedQuizCard = ({
 						Responses : {responses}
 					{/* </Link> */}
 				</div>
-				<div id='questions'>Questions : {questions}</div>
+				<div id='questions'>Questions : {questionsNum}</div>
 			</div>
 			<div className='bottom-bar'>
 				{isOpen ? <div id='open'>open</div> : <div id='closed'>closed</div>}
